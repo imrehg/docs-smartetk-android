@@ -258,7 +258,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'smartetkandroidapi', u'SMART ETK Android API Documentation',
+    (master_doc, 'smartetkandroidapi', u'Smart ETK Android API Documentation',
      [author], 1)
 ]
 
@@ -272,8 +272,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'SMARTETKAndroidAPI', u'SMART ETK Android API Documentation',
-   author, 'SMARTETKAndroidAPI', 'One line description of project.',
+  (master_doc, 'SmartETKAndroidAPI', u'Smart ETK Android API Documentation',
+   author, 'SMARTETKAndroidAPI', 'SmartETK API documentation',
    'Miscellaneous'),
 ]
 
