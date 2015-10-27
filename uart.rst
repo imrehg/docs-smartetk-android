@@ -112,7 +112,7 @@ UART Class
 
    If ``bEnable`` is ``true``, then read will block until a character equal to``byReturnChar`` is received,
    or read buffer is full. If ``bEnable`` is ``false`` then read will ignore byReturnChar checking when reading data.
-   
+
    :param boolean bEnable: enable or disable the termination character function.
    :param byte byReturnChar: the termination character
    :return: ``S_OK`` if the function succeeded
@@ -135,7 +135,7 @@ UART Class
         cleanStatus();
         return;
       }
-      
+
 .. java:method:: int readData(int iReadLen, byte[] byRead, int[] iActualLen);
 
    Receive data from the opened UART device.
@@ -150,7 +150,7 @@ UART Class
 
    Send the data to the opened Uart device.
 
-   :param int iWriteLen: number of bytes to transmit, maximum 1024 bytes per transfer. 
+   :param int iWriteLen: number of bytes to transmit, maximum 1024 bytes per transfer.
    :param byte[] byWrite: pointer to data buffer.
    :return: ``S_OK`` if the function succeeded
    :return: ``E_*`` otherwise
@@ -173,9 +173,9 @@ UART Initialize Communication
 .. note::
 
    In the sample code below, ``mETBaudRate`` is an ``EditText`` widget.
-   
+
 .. code-block:: java
-		
+
    private Uart m_uart = null;
    m_uart = new Uart();
    if(null == m_uart) {
@@ -203,7 +203,7 @@ UART Write Data
    In the sample code below, ``mETWrite`` is an ``EditText`` widget.
 
 .. code-block:: java
-		
+
    if(SmartETK.S_OK != m_uart.writeData(mETWrite.getText().toString().getBytes().length,
                                         mETWrite.getText().toString().getBytes())) {
      return;
@@ -213,7 +213,7 @@ UART Read Data
 ^^^^^^^^^^^^^^
 
 .. code-block:: java
-		
+
    int iReadLen = LENGTH;
    byte[] byRead = new byte[LENGTH];
    int[] iActualLen = new int[1];
@@ -229,4 +229,4 @@ UART Read Data
       byRead[i] = 0;
     }
     iActualLen[0] = 0;
-   }    
+   }
