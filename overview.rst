@@ -26,9 +26,10 @@ Model           GPIO  WDT  RTC  WOL  RES  UART SUS  CEC  I2C  CAN  UPC  DPMS
 =============== ====  ==== ==== ==== ==== ==== ==== ==== ==== ==== ==== ====
 
 **Legend**: ``GPIO``: :ref:`GPIO <gpio>` support, ``WDT``: :ref:`WatchDog <watchdog>` timer,
-``RTC`` is Real-Time Clock Wake-up, ``WOL``: Wake-on-LAN, ``RES``: Restart,
-``UART``: :ref:`UART <uart>` support, ``SUS``: Suspend, ``CEC``: HDMI CEC support,
-``CAN``: :ref:`CAN <can>` support, ``UPC``: x, ``DPMS``: x.
+``RTC`` is :ref:`Real-Time Clock Wake-up <rtc>`, ``WOL``: Wake-on-LAN, ``RES``: :java:ref:`Restart <reboot>` support,
+``UART``: :ref:`UART <uart>` support, ``SUS``: :java:ref:`Suspend <suspend>` support,
+``CEC``: HDMI CEC support, ``CAN``: :ref:`CAN <can>` support, ``I2C``: :ref:`I2C <i2c>` support,
+``UPC``: x, ``DPMS``: :ref:`DPMS <dpms>` support
 
 .. _VAB-820: http://www.viatech.com/en/boards/pico-itx/vab-820/
 .. _VAB-1000: http://www.viatech.com/en/boards/pico-itx/vab-1000/

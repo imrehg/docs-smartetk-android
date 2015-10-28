@@ -5,11 +5,11 @@ GPIO Class
 
 .. java:package:: com.viaembedded.smartetk.GPIO
 
-.. java:type:: class GPIO<pinID>
+.. java:type:: class GPIO
 
    Create a new GPIO object with specified pin ID. Ex: 1, 2, 4, 5, 7, 8, 9, 16.
 
-   :param pinID: GPIO's pin ID.
+   :param int pinID: GPIO's pin ID.
 
    .. code-block:: java
 
@@ -65,8 +65,8 @@ GPIO Class
    :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
-GPIO Examples
--------------
+GPIO Code Examples
+------------------
 
 GPIO1, GPIO2, GPIO4, GPIO5, GPIO7, GPIO8, GPIO9 and GPIO203 are the external GPIO pins
 for user’s own design. An example of setting GPIO1 as input pin and getting its value is shown here.

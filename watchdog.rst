@@ -55,8 +55,8 @@ WatchDog Class
    :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
-WatchDog Examples
------------------
+WatchDog Code Examples
+----------------------
 
 Enable WatchDog
 ^^^^^^^^^^^^^^^^

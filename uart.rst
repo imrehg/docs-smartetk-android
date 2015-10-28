@@ -168,8 +168,8 @@ UART Class
    :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
-UART Examples
--------------
+UART Code Examples
+------------------
 
 UART Initialize Communication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

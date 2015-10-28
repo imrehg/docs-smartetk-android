@@ -14,10 +14,15 @@ Contents:
 
    overview
    smartetk
+   network
    gpio
+   rtc
+   i2c
    watchdog
    uart
    can
+   systemetk
+   dpms
       
 Indices and tables
 ==================
