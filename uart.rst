@@ -1,5 +1,9 @@
+.. _uart:
+
 UART Class
 ==============
+
+.. java:package:: com.viaembedded.smartetk.Uart
 
 .. java:type:: class Uart
 
@@ -14,18 +18,18 @@ UART Class
    Open the specified UART device.
 
    :param String sDev: UART device name, for example ``ttyUSB0``.
-   :return: ``S_OK`` if the function succeeded
-   :return: ``E_UART_OPENFAIL`` if failed to open the device
-   :return: ``E_UART_ALREADY_OPENED`` if the device has already has been opened
-   :return: ``E_UART_TTY_BEEN_USED`` if  the device has been used by other object
-   :return: ``E_*`` otherwise.
+   :return: :c:macro:`S_OK` if function succeeds
+   :return: :c:macro:`E_UART_OPENFAIL` if failed to open the device
+   :return: :c:macro:`E_UART_ALREADY_OPENED` if the device has already has been opened
+   :return: :c:macro:`E_UART_TTY_BEEN_USED` if  the device has been used by other object
+   :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int close()
 
    Close the UART device that is currently opened.
 
-   :return: ``S_OK`` if the function succeeded
-   :return: ``E_*`` otherwise
+   :return: :c:macro:`S_OK` if function succeeds
+   :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:type:: class UartConfig
 
@@ -46,16 +50,16 @@ UART Class
    :param byte byStopBits: stop bits, ``1`` for 1 stop bit, ``2``: 2 stop bits
    :param byte byParity: parity, ``0`` for none, ``1`` for odd, ``2`` for even parity
    :param byte byFlowControl: flow control, ``0`` for none, ``1`` for CTS/RTS flow control
-   :return: ``S_OK`` if the function succeeded
-   :return: ``E_*`` otherwise
+   :return: :c:macro:`S_OK` if function succeeds
+   :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int getConfig(UartConfig UC)
 
    Get the configurations of the opened Uart device and store them in passed UartConfig Class.
 
    :param UartConfig UC: Uart Configuration
-   :return: ``S_OK`` if the function succeeded
-   :return: ``E_*`` otherwise
+   :return: :c:macro:`S_OK` if function succeeds
+   :return: ``E_*`` otherwise, see :ref:`return`.
 
    Example:
 
@@ -79,16 +83,16 @@ UART Class
 
    :param boolean bEnable: ``true`` if enable the timeout function, ``false`` otherwise.
    :param int iTimeout: timeout value in multiples of 0.1 seconds, accepted range is 0 – 255 (0 - 25.5 seconds)
-   :return: ``S_OK`` if the function succeeded
-   :return: ``E_*`` otherwise
+   :return: :c:macro:`S_OK` if function succeeds
+   :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int getTimeout(Timeout T)
 
    Get the timeout configuration of the opened Uart device and store them in passed Timeout Class.
 
    :param Timeout T: timeout configuration
-   :return: ``S_OK`` if the function succeeded
-   :return: ``E_*`` otherwise
+   :return: :c:macro:`S_OK` if function succeeds
+   :return: ``E_*`` otherwise, see :ref:`return`.
 
    Example:
 
@@ -115,16 +119,16 @@ UART Class
 
    :param boolean bEnable: enable or disable the termination character function.
    :param byte byReturnChar: the termination character
-   :return: ``S_OK`` if the function succeeded
-   :return: ``E_*`` otherwise
+   :return: :c:macro:`S_OK` if function succeeds
+   :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int getReturnChar(ReturnChar RC);
 
    Get the termination character configuration of the opened Uart device and store them in passed ReturnChar Class.
 
    :param ReturnChar RC: termination character configuration
-   :return: ``S_OK`` if the function succeeded
-   :return: ``E_*`` otherwise
+   :return: :c:macro:`S_OK` if function succeeds
+   :return: ``E_*`` otherwise, see :ref:`return`.
 
    Example:
 
@@ -143,8 +147,8 @@ UART Class
    :param int iReadLen: number of bytes to read, maximum 1024 bytes per transfer.
    :param byte[] byRead: pointer to the buffer pointer.
    :param int[] iActualLen: the actual number of bytes received
-   :return: ``S_OK`` if the function succeeded
-   :return: ``E_*`` otherwise
+   :return: :c:macro:`S_OK` if function succeeds
+   :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int writeData(int iWriteLen, byte[] byWrite);
 
@@ -152,8 +156,8 @@ UART Class
 
    :param int iWriteLen: number of bytes to transmit, maximum 1024 bytes per transfer.
    :param byte[] byWrite: pointer to data buffer.
-   :return: ``S_OK`` if the function succeeded
-   :return: ``E_*`` otherwise
+   :return: :c:macro:`S_OK` if function succeeds
+   :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int reset();
 
@@ -161,8 +165,8 @@ UART Class
    ``open()`` will return an ``E_UART_ALREADY_OPENED``. The object could call this reset function to
    release the UART resource and try to open the device again by calling ``open()``.
 
-   :return: ``S_OK`` if the function succeeded
-   :return: ``E_*`` otherwise
+   :return: :c:macro:`S_OK` if function succeeds
+   :return: ``E_*`` otherwise, see :ref:`return`.
 
 UART Examples
 -------------

@@ -13,12 +13,12 @@ Contents:
    :numbered:
 
    overview
-   helper
+   smartetk
    gpio
    watchdog
    uart
    can
-   
+      
 Indices and tables
 ==================
 
