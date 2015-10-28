@@ -25,11 +25,11 @@ GPIO Class
    :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
-.. c:macro:: GM_GPI
+.. java:field:: int GM_GPI
 
    Indicates "input" direction for GPIO pin.
 
-.. c:macro:: GM_GPO
+.. java:field:: int GM_GPO
 
    Indicates "output" direction for GPIO pin.
 
@@ -37,7 +37,7 @@ GPIO Class
 
    Set input/output direction for the specific GPIO pin.
 
-   :param int direction: :c:macro:`GM_GPI` for input direction, :c:macro:`GM_GPO` for output direction.
+   :param int direction: :java:ref:`GM_GPI` for input direction, :java:ref:`GM_GPO` for output direction.
    :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
@@ -45,7 +45,7 @@ GPIO Class
 
    Get direction state of the specific GPIO Pin.
 
-   :param int[] direction: parameter to set to :c:macro:`GM_GPI` for input, or :c:macro:`GM_GPO` for output depending on the pin's direction
+   :param int[] direction: parameter to set to :java:ref:`GM_GPI` for input, or :java:ref:`GM_GPO` for output depending on the pin's direction
    :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
