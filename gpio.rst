@@ -25,11 +25,11 @@ GPIO Class
    :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
-.. java:field:: int GM_GPI
+.. java:field:: static int GM_GPI
 
    Indicates "input" direction for GPIO pin.
 
-.. java:field:: int GM_GPO
+.. java:field:: static int GM_GPO
 
    Indicates "output" direction for GPIO pin.
 

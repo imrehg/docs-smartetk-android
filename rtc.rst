@@ -13,15 +13,15 @@ RTC Class
 
       RTC m_rtc = new RTC();
 
-.. java:field:: byte ARG_RTC_MODE_DAY
+.. java:field:: static byte ARG_RTC_MODE_DAY
 
    Waking up every day.
 
-.. java:field:: byte ARG_RTC_MODE_WEEK
+.. java:field:: static byte ARG_RTC_MODE_WEEK
 
    Waking up every week.
 
-.. java:field:: byte ARG_RTC_MODE_MONTH
+.. java:field:: static byte ARG_RTC_MODE_MONTH
 
    Waking up every month.
 
