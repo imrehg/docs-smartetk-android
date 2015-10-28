@@ -21,7 +21,7 @@ WatchDog Class
    otherwise the system will reboot.
 
    :param boolean enable:  ``true`` for enable, ``false`` for disable
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int getEnable(boolean[] enable);
@@ -29,14 +29,14 @@ WatchDog Class
    Get enable state of the watch dog function.
 
    :param boolean[] enable: parameter to put the return value of the watchdog status, ``true`` for enabled, ``false`` for disabled
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int keepAlive()
 
    Keep watch dog alive to avoid rebooting the system.
 
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int setTimeout(int iTimeout)
@@ -44,7 +44,7 @@ WatchDog Class
    Set watch dog timeout value
 
    :param int iTimeout: timeout in seconds, accepted values are between ``1`` and ``128``.
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int getTimeout (int[] iTimeout)
@@ -52,7 +52,7 @@ WatchDog Class
    Get watchdog timeout value.
 
    :param int[] iTimeout: parameter to put the return value of the watchdog timeout in seconds
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 WatchDog Examples

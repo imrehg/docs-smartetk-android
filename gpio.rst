@@ -22,7 +22,7 @@ GPIO Class
    Enable the specific GPIO pin.
 
    :param boolean enable:  ``true`` for enable, ``false`` for disable
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. c:macro:: GM_GPI
@@ -38,7 +38,7 @@ GPIO Class
    Set input/output direction for the specific GPIO pin.
 
    :param int direction: :c:macro:`GM_GPI` for input direction, :c:macro:`GM_GPO` for output direction.
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int getDirection(int[] direction)
@@ -46,7 +46,7 @@ GPIO Class
    Get direction state of the specific GPIO Pin.
 
    :param int[] direction: parameter to set to :c:macro:`GM_GPI` for input, or :c:macro:`GM_GPO` for output depending on the pin's direction
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int setValue(int value)
@@ -54,7 +54,7 @@ GPIO Class
    Set output signal for the specific GPIO Pin.
 
    :param int value: GPIO signal, `0` for logic low, `1` for logic high.
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int getValue(int[] value);
@@ -62,7 +62,7 @@ GPIO Class
    Get input signal of the specific GPIO Pin.
 
    :param int[] value: GPIO signal, return `0` for logic low, return `1` for logic high.
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 GPIO Examples

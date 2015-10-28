@@ -18,16 +18,16 @@ CAN Class
    Open the specified CAN device.
 
    :param String sname: CAN device name, for exammple ``can0``, ``can1``.
-   :return: :c:macro:`S_OK` if function succeeds
-   :return: :c:macro:`E_CAN_OPENFAIL` if opening device has failed
-   :return: :c:macro:`E_CAN_ALREADY_OPENED` if the object is already open
+   :return: :java:ref:`S_OK` if function succeeds
+   :return: :java:ref:`E_CAN_OPENFAIL` if opening device has failed
+   :return: :java:ref:`E_CAN_ALREADY_OPENED` if the object is already open
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int close()
 
    Close the CAN device that is currently opened.
 
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int setBitrate(int iBitrate)
@@ -35,8 +35,8 @@ CAN Class
    Set the bitrate of the opened CAN device.
 
    :param int iBitrate: bit rate, e.g. ``125000``. The default rate is ``500000``
-   :return: :c:macro:`S_OK` if function succeeds
-   :return: :c:macro:`E_CAN_BAUDRATE_NOT_SUPPORT` if the given bitrate is not supported.
+   :return: :java:ref:`S_OK` if function succeeds
+   :return: :java:ref:`E_CAN_BAUDRATE_NOT_SUPPORT` if the given bitrate is not supported.
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int getBitrate(int[] iBitrate)
@@ -44,7 +44,7 @@ CAN Class
    Get the bitrate of the opened CAN device.
 
    :param int iBitrate: store the return bit rate
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int setTimeout(boolean bEnable, int iTimeout)
@@ -56,7 +56,7 @@ CAN Class
 
    :param boolean bEnable: ``true`` if enable the timeout function, ``false`` otherwise.
    :param int iTimeout: timeout value in multiples of 0.1 seconds, accepted range is 0 – 255 (0 - 25.5 seconds)
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int getTimeout(Timeout timeout)
@@ -64,7 +64,7 @@ CAN Class
    Get the timeout configuration of the opened CAN device and store them in passed Timeout Class.
 
    :param Timeout T: timeout configuration
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
    Example:
@@ -92,7 +92,7 @@ CAN Class
    ``bEnable = false`` (no matter setRecvOwnMsgs() set to true or false, it won’t receive its onw msgs after transmit)
 
    :param boolean bEnable: ``true`` to enable loopback, ``false`` otherwise.
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int getLoopback (boolean[] bEnable);
@@ -100,7 +100,7 @@ CAN Class
    Get loopback state.
 
    :param boolean[] bEnable: to variable to place the loopback state, ``true`` for enabled, ``false`` for disabled
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
    Example:
@@ -127,7 +127,7 @@ CAN Class
    ``bEnable = false`` (default)
 
    :param boolean bEnable: ``true`` if receiving own frames, ``false`` otherwise
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int getRecvOwnMsgs (Boolean[] bEnable)
@@ -135,7 +135,7 @@ CAN Class
    Get the state of receiving its own sent frames or not.
 
    :param boolean[] bEnable: variable to put results, ``true`` if function is enabled, ``false`` if not.
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
    Example:
@@ -169,7 +169,7 @@ CAN Class
 
    :param CanFilter[] canFilter: CanFilter object array
    :param iLength: number of CanFilters object to set, ``0`` represents to disable the reception of CAN frames.
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:type:: class CanFrame
@@ -185,7 +185,7 @@ CAN Class
    Reading CAN frame from the opened CAN device.
 
    :param CanFrame canFrame: CAN frame object to read
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
 
 .. java:method:: int writeFrame (CanFrame canFrame)
@@ -193,5 +193,5 @@ CAN Class
    Write a CAN frame to the opened CAN device.
 
    :param CanFrame canFrame: CAN frame object to write
-   :return: :c:macro:`S_OK` if function succeeds
+   :return: :java:ref:`S_OK` if function succeeds
    :return: ``E_*`` otherwise, see :ref:`return`.
