@@ -9,6 +9,7 @@ Welcome to SMART ETK Android API's documentation!
 Contents:
 
 .. toctree::
+   :caption: Table of Contents
    :maxdepth: 2
    :numbered:
 
