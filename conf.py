@@ -252,6 +252,14 @@ latex_documents = [
 # If false, no module index is generated.
 #latex_domain_indices = True
 
+latex_elements = {
+    # Additional stuff for the LaTeX preamble.
+    'preamble': "".join((
+        '\usepackage{amssymb}',
+        '\DeclareUnicodeCharacter{00A0}{ }',  # NO-BREAK SPACE
+        '\DeclareUnicodeCharacter{2713}{\checkmark}',  # CHECK MARK
+    )),
+}
 
 # -- Options for manual page output ---------------------------------------
 
