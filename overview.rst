@@ -26,7 +26,7 @@ Model           GPIO  WDT  RTC  WOL  RES  UART SUS  CEC  I2C  CAN  UPC  DPMS
 =============== ====  ==== ==== ==== ==== ==== ==== ==== ==== ==== ==== ====
 
 **Legend**: ``GPIO``: :ref:`GPIO <gpio>` support, ``WDT``: :ref:`WatchDog <watchdog>` timer,
-``RTC`` is :ref:`Real-Time Clock Wake-up <rtc>`, ``WOL``: Wake-on-LAN, ``RES``: :java:ref:`Restart <reboot>` support,
+``RTC`` is :ref:`Real-Time Clock Wake-up <rtc>`, ``WOL``: :ref:`Wake-on-LAN <network>`, ``RES``: :java:ref:`Restart <reboot>` support,
 ``UART``: :ref:`UART <uart>` support, ``SUS``: :java:ref:`Suspend <suspend>` support,
 ``CEC``: HDMI CEC support, ``CAN``: :ref:`CAN <can>` support, ``I2C``: :ref:`I2C <i2c>` support,
 ``UPC``: x, ``DPMS``: :ref:`DPMS <dpms>` support
