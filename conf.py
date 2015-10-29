@@ -236,7 +236,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'SMARTETKAndroidAPI.tex', u'SMART ETK Android API Documentation',
+  (master_doc, 'SmartETK_Android_API.tex', u'Smart ETK Android API Documentation',
    u'VIA Technologies', 'manual'),
 ]
 
@@ -288,7 +288,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'SmartETKAndroidAPI', u'Smart ETK Android API Documentation',
+  (master_doc, 'SmartETK_Android_API', u'Smart ETK Android API Documentation',
    author, 'SMARTETKAndroidAPI', 'SmartETK API documentation',
    'Miscellaneous'),
 ]
@@ -316,6 +316,7 @@ epub_copyright = copyright
 
 # The basename for the epub file. It defaults to the project name.
 #epub_basename = project
+epub_basename = u'SmartETK_Android_API'
 
 # The HTML theme for the epub output. Since the default themes are not optimized
 # for small screen space, using the same theme for HTML and epub output is
