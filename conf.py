@@ -51,7 +51,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Smart ETK Android API'
-copyright = u'2015, VIA Technologies, Inc.'
+copyright = u'2015, VIA Technologies, Inc'
 author = u'VIA Technologies'
 
 # The version info for the project you're documenting, acts as replacement for
