@@ -3,7 +3,7 @@
 GPIO Class
 ==========
 
-.. java:package:: com.viaembedded.smartetk.GPIO
+.. java:package:: com.viaembedded.smartetk
 
 .. java:type:: class GPIO
 
@@ -15,55 +15,55 @@ GPIO Class
 
       GPIO gpio5 = new GPIO(5);
 
-.. java:method:: int setEnable(boolean enable)
+   .. java:method:: int setEnable(boolean enable)
 
-   .. java:import:: com.viaembedded.smartetk GPIO
+      .. java:import:: com.viaembedded.smartetk GPIO
 
-   Enable the specific GPIO pin.
+      Enable the specific GPIO pin.
 
-   :param boolean enable:  ``true`` for enable, ``false`` for disable
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`.
+      :param boolean enable:  ``true`` for enable, ``false`` for disable
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`.
 
-.. java:field:: static int GM_GPI
+   .. java:field:: static int GM_GPI
 
-   Indicates "input" direction for GPIO pin.
+      Indicates "input" direction for GPIO pin.
 
-.. java:field:: static int GM_GPO
+   .. java:field:: static int GM_GPO
 
-   Indicates "output" direction for GPIO pin.
+      Indicates "output" direction for GPIO pin.
 
-.. java:method:: int setDirection(int direction)
+   .. java:method:: int setDirection(int direction)
 
-   Set input/output direction for the specific GPIO pin.
+      Set input/output direction for the specific GPIO pin.
 
-   :param int direction: :java:ref:`GM_GPI` for input direction, :java:ref:`GM_GPO` for output direction.
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`.
+      :param int direction: :java:ref:`GM_GPI` for input direction, :java:ref:`GM_GPO` for output direction.
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`.
 
-.. java:method:: int getDirection(int[] direction)
+   .. java:method:: int getDirection(int[] direction)
 
-   Get direction state of the specific GPIO Pin.
+      Get direction state of the specific GPIO Pin.
 
-   :param int[] direction: parameter to set to :java:ref:`GM_GPI` for input, or :java:ref:`GM_GPO` for output depending on the pin's direction
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`.
+      :param int[] direction: parameter to set to :java:ref:`GM_GPI` for input, or :java:ref:`GM_GPO` for output depending on the pin's direction
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`.
 
-.. java:method:: int setValue(int value)
+   .. java:method:: int setValue(int value)
 
-   Set output signal for the specific GPIO Pin.
+      Set output signal for the specific GPIO Pin.
 
-   :param int value: GPIO signal, `0` for logic low, `1` for logic high.
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`.
+      :param int value: GPIO signal, `0` for logic low, `1` for logic high.
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`.
 
-.. java:method:: int getValue(int[] value);
+   .. java:method:: int getValue(int[] value);
 
-   Get input signal of the specific GPIO Pin.
+      Get input signal of the specific GPIO Pin.
 
-   :param int[] value: GPIO signal, return `0` for logic low, return `1` for logic high.
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`.
+      :param int[] value: GPIO signal, return `0` for logic low, return `1` for logic high.
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`.
 
 GPIO Code Examples
 ------------------

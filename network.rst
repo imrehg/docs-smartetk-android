@@ -3,7 +3,7 @@
 Network Class
 =============
 
-.. java:package:: com.viaembedded.smartetk.Network
+.. java:package:: com.viaembedded.smartetk
 
 .. java:type:: class Network
 
@@ -13,22 +13,22 @@ Network Class
 
       Network m_network = new Network();
 
-.. java:method:: int setWakeOnLan(boolean bEnable)
+   .. java:method:: int setWakeOnLan(boolean enable)
 
-   Enable or disable Network Wake-on-LAN function from suspend mode.
+      Enable or disable Network Wake-on-LAN function from suspend mode.
 
-   :param boolean bEnable: enable or disable functionality
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`
-			   
-.. java:method:: int getWakeOnLan(boolean[] bEnable)
+     :param boolean enable: enable or disable functionality
+     :return: :java:ref:`S_OK` if function succeeds
+     :return: ``E_*`` otherwise, see :ref:`return`
 
-   Get the status if Network Wake-on-LAN function.
-   
-   :param boolean[] bEnable: variable to update with ``true`` for enabled, ``false`` for disabled
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`
-			     
+   .. java:method:: int getWakeOnLan(boolean[] enable)
+
+      Get the status if Network Wake-on-LAN function.
+
+      :param boolean[] enable: variable to update with ``true`` for enabled, ``false`` for disabled
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`
+
 Network Code Examples
 ---------------------
 
@@ -44,13 +44,13 @@ Set Wake-on-LAN From Suspend Mode
    }
    if(SmartETK.S_OK != m_network.setWakeOnLan(bSetEnable)) {
      return false;
-   } 
+   }
 
 Get Wake-on-LAN From Suspend Mode Status
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: java
-		
+
    if(null == m_network) {
      m_network = new Network();
    }

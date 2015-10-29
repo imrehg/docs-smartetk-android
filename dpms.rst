@@ -3,7 +3,7 @@
 DPMS Class
 ===============
 
-.. java:package:: com.viaembedded.smartetk.Dpms
+.. java:package:: com.viaembedded.smartetk
 
 .. java:type:: class Dpms
 
@@ -13,18 +13,18 @@ DPMS Class
 
       m_dpms = new Dpms();
 
-.. java:method:: int setDpms(boolean bEnable)
+   .. java:method:: int setDpms(boolean bEnable)
 
-   Enable or disable the DPMS mode of the HDMI output
+      Enable or disable the DPMS mode of the HDMI output
 
-   :param boolean bEnable: ``true`` to enable the DPMS mode, ``false`` to disable
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`
+      :param boolean bEnable: ``true`` to enable the DPMS mode, ``false`` to disable
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`
 
-.. java:method:: int getDpms(boolean[] bEnable)
+   .. java:method:: int getDpms(boolean[] bEnable)
 
-   Get the status if DPMS function.
+      Get the status if DPMS function.
 
-   :param boolean[] bEnable: parameter to contain the return value, ``true`` for enabled, ``false`` for disabled
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`
+      :param boolean[] bEnable: parameter to contain the return value, ``true`` for enabled, ``false`` for disabled
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`

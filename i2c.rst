@@ -3,7 +3,7 @@
 I2C Class
 =========
 
-.. java:package:: com.viaembedded.smartetk.I2C
+.. java:package:: com.viaembedded.smartetk
 
 .. java:type:: class I2C
 
@@ -26,25 +26,25 @@ I2C Class
 
       I2C m_i2c = new I2C(1,52,2);
 
-.. java:method:: int read(byte[] Buf, int Offset, int ReadLen)
+   .. java:method:: int read(byte[] Buf, int Offset, int ReadLen)
 
-   Read data from specified offset with a given length, and store the data in buffer.
+      Read data from specified offset with a given length, and store the data in buffer.
 
-   :param byte[] Buf: buffer to store the read data
-   :param int Offset: the registers' offset to read from a specified I2C bus number and slave address, accepted values are from 0 to 0x7FFFFFFF
-   :param int ReadLen: number of bytes to read, maximum 255 bytes per transfer. 
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`
+      :param byte[] Buf: buffer to store the read data
+      :param int Offset: the registers' offset to read from a specified I2C bus number and slave address, accepted values are from 0 to 0x7FFFFFFF
+      :param int ReadLen: number of bytes to read, maximum 255 bytes per transfer. 
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`
 
-.. java:method:: int write(byte[] byBuf, int iOffset, int iWriteLen)
+   .. java:method:: int write(byte[] byBuf, int iOffset, int iWriteLen)
 
-   Write data to a specified offset with a given length.
+      Write data to a specified offset with a given length.
 
-   :param byte Buf: the write buffer
-   :param int Offset: the registers' offset of writing to a specified I2C bus number and slave address, accepted values are from 0 to 7FFFFFFF
-   :param int WriteLen: the written data length, maximum 255 bytes per transfer
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`
+      :param byte Buf: the write buffer
+      :param int Offset: the registers' offset of writing to a specified I2C bus number and slave address, accepted values are from 0 to 7FFFFFFF
+      :param int WriteLen: the written data length, maximum 255 bytes per transfer
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`
 
 I2C Code Examples
 -----------------

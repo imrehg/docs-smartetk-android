@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# SMART ETK Android API documentation build configuration file, created by
+# Smart ETK Android API documentation build configuration file, created by
 # sphinx-quickstart2 on Tue Oct 27 13:56:00 2015.
 #
 # This file is execfile()d with the current directory set to its
@@ -112,9 +112,15 @@ todo_include_todos = True
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-# html_theme = 'classic'
-html_theme = 'bizstyle'
-#html_theme = 'alabaster'
+html_theme = 'classic'
+
+html_theme_options = {
+    "stickysidebar": "true",
+}
+
+# html_theme = 'bizstyle'
+# html_theme = 'alabaster'
+# html_theme = 'sphinxdoc'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -134,6 +140,7 @@ html_theme = 'bizstyle'
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
 #html_logo = None
+html_logo = '_static/VIA_Logo.jpg'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -206,13 +213,14 @@ html_last_updated_fmt = '%b %d, %Y'
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'SMARTETKAndroidAPIdoc'
+htmlhelp_basename = 'SmartETKAndroidAPIdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
 #'papersize': 'letterpaper',
+    'papersize': 'a4paper',
 
 # The font size ('10pt', '11pt' or '12pt').
 #'pointsize': '10pt',

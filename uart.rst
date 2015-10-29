@@ -3,7 +3,7 @@
 UART Class
 ==============
 
-.. java:package:: com.viaembedded.smartetk.Uart
+.. java:package:: com.viaembedded.smartetk
 
 .. java:type:: class Uart
 
@@ -13,170 +13,191 @@ UART Class
 
       Uart m_uart = new Uart();
 
-.. java:method:: int open(String sDev)
+   .. java:method:: int open(String sDev)
 
-   Open the specified UART device.
+      Open the specified UART device.
 
-   :param String sDev: UART device name, for example ``ttyUSB0``.
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: :java:ref:`E_UART_OPENFAIL` if failed to open the device
-   :return: :java:ref:`E_UART_ALREADY_OPENED` if the device has already has been opened
-   :return: :java:ref:`E_UART_TTY_BEEN_USED` if  the device has been used by other object
-   :return: ``E_*`` otherwise, see :ref:`return`.
+      :param String sDev: UART device name, for example ``ttyUSB0``.
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: :java:ref:`E_UART_OPENFAIL` if failed to open the device
+      :return: :java:ref:`E_UART_ALREADY_OPENED` if the device has already has been opened
+      :return: :java:ref:`E_UART_TTY_BEEN_USED` if  the device has been used by other object
+      :return: ``E_*`` otherwise, see :ref:`return`.
 
-.. java:method:: int close()
+   .. java:method:: int close()
 
-   Close the UART device that is currently opened.
+      Close the UART device that is currently opened.
 
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`.
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`.
 
-.. java:type:: class UartConfig
+   .. java:type:: class UartConfig
 
-   Class to contain the Uart configuration values for ``getConfig``.
+      Class to contain the Uart configuration values for ``getConfig``.
 
-   :param int iBaudRate: baud rate, for example ``115200``
-   :param byte byDataBits: data bits, ``7`` for 7 data bits, ``8`` for 8 data bits
-   :param byte byStopBits: stop bits, ``1`` for 1 stop bit, ``2`` for 2 stop bits
-   :param byParity: parity, ``0`` for none, ``1`` for odd, ``2`` even parity
-   :param byte byFlowControl: flow control, ``0`` for none, ``1`` for CTS/RTS flow control
+      .. java:field:: int BaudRate
 
-.. java:method:: int setConfig(int iBaudRate, byte byDataBIts, byte byStopBits, byte byParity, byte byFlowCtrl)
+	 baud rate, for example ``115200``
 
-   Configure an already opened UART device.
+      .. java:field:: byte DataBits
 
-   :param int iBaudRate: baud rate, e.g. ``115200``
-   :param byte byDataBits: data bits,  `7` for 7-bit data bits, ``8`` for 8-bit data bits
-   :param byte byStopBits: stop bits, ``1`` for 1 stop bit, ``2``: 2 stop bits
-   :param byte byParity: parity, ``0`` for none, ``1`` for odd, ``2`` for even parity
-   :param byte byFlowControl: flow control, ``0`` for none, ``1`` for CTS/RTS flow control
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`.
+	 data bits, ``7`` for 7 data bits, ``8`` for 8 data bits
 
-.. java:method:: int getConfig(UartConfig UC)
+      .. java:field:: byte StopBits
 
-   Get the configurations of the opened Uart device and store them in passed UartConfig Class.
+	 stop bits, ``1`` for 1 stop bit, ``2`` for 2 stop bits
 
-   :param UartConfig UC: Uart Configuration
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`.
+      .. java:field:: byte Parity
 
-   Example:
+	 parity, ``0`` for none, ``1`` for odd, ``2`` even parity
 
-   .. code-block:: java
+      .. java:field:: byte FlowControl
 
-      UartConfig UC = m_uart.new UartConfig();
+	 flow control, ``0`` for none, ``1`` for CTS/RTS flow control
 
-      if (SmartETK.S_OK != m_uart.getConfig(UC)) {
-        cleanStatus();
-	return;
-      }
+   .. java:method:: int setConfig(int iBaudRate, byte byDataBIts, byte byStopBits, byte byParity, byte byFlowCtrl)
 
-.. java:method:: int setTimeout(boolean bEnable, int iTimeout)
+      Configure an already opened UART device.
 
-   Set the timeout of the opened UART device.
+      :param int iBaudRate: baud rate, e.g. ``115200``
+      :param byte byDataBits: data bits,  `7` for 7-bit data bits, ``8`` for 8-bit data bits
+      :param byte byStopBits: stop bits, ``1`` for 1 stop bit, ``2``: 2 stop bits
+      :param byte byParity: parity, ``0`` for none, ``1`` for odd, ``2`` for even parity
+      :param byte byFlowControl: flow control, ``0`` for none, ``1`` for CTS/RTS flow control
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`.
 
-   If ``bEnable`` is set to ``true``, the UART read method depends on the ``iTimeout`` value.
-   If timeout is set to ``0`` then polling read is used, if ``1-255`` then the data is read with the corresponding timeout.
+   .. java:method:: int getConfig(UartConfig UC)
 
-   If ``bEnable`` is set to ``false`` then blocking read is performed.
+      Get the configurations of the opened Uart device and store them in passed UartConfig Class.
 
-   :param boolean bEnable: ``true`` if enable the timeout function, ``false`` otherwise.
-   :param int iTimeout: timeout value in multiples of 0.1 seconds, accepted range is 0 – 255 (0 - 25.5 seconds)
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`.
+      :param UartConfig UC: Uart Configuration
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`.
 
-.. java:method:: int getTimeout(Timeout T)
+      Example:
 
-   Get the timeout configuration of the opened Uart device and store them in passed Timeout Class.
+      .. code-block:: java
 
-   :param Timeout T: timeout configuration
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`.
+         UartConfig UC = m_uart.new UartConfig();
 
-   Example:
+         if (SmartETK.S_OK != m_uart.getConfig(UC)) {
+           cleanStatus();
+           return;
+         }
 
-   .. code-block:: java
+   .. java:method:: int setTimeout(boolean bEnable, int iTimeout)
 
-      Timeout T = m_uart.new Timeout();
+      Set the timeout of the opened UART device.
 
-      if(SmartETK.S_OK != m_uart.getTimeout(T)) {
-        cleanStatus();
-        return;
-      }
+      If ``bEnable`` is set to ``true``, the UART read method depends on the ``iTimeout`` value.
+      If timeout is set to ``0`` then polling read is used, if ``1-255`` then the data is read with the corresponding timeout.
 
-.. java:type:: class ReturnChar
+      If ``bEnable`` is set to ``false`` then blocking read is performed.
 
-   :param boolean bEnable: enable or disable the termination character function
-   :param byte byReturnChar: the termination character
+      :param boolean bEnable: ``true`` if enable the timeout function, ``false`` otherwise.
+      :param int iTimeout: timeout value in multiples of 0.1 seconds, accepted range is 0 – 255 (0 - 25.5 seconds)
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`.
 
-.. java:method:: int setReturnChar(boolean bEnable, byte byReturnChar);
+   .. java:method:: int getTimeout(Timeout T)
 
-   Set the termination character of the opened UART device.
+      Get the timeout configuration of the opened Uart device and store them in passed Timeout Class.
 
-   If ``bEnable`` is ``true``, then read will block until a character equal to``byReturnChar`` is received,
-   or read buffer is full. If ``bEnable`` is ``false`` then read will ignore byReturnChar checking when reading data.
+      :param Timeout T: timeout configuration
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`.
 
-   :param boolean bEnable: enable or disable the termination character function.
-   :param byte byReturnChar: the termination character
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`.
+      Example:
 
-.. java:method:: int getReturnChar(ReturnChar RC);
+      .. code-block:: java
 
-   Get the termination character configuration of the opened Uart device and store them in passed ReturnChar Class.
+         Timeout T = m_uart.new Timeout();
 
-   :param ReturnChar RC: termination character configuration
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`.
+         if(SmartETK.S_OK != m_uart.getTimeout(T)) {
+           cleanStatus();
+           return;
+         }
 
-   Example:
+   .. java:type:: class ReturnChar
 
-   .. code-block:: java
+      Used by :java:ref:`getReturnChar`.
 
-      ReturnChar RC = m_uart.new ReturnChar();
-      if(SmartETK.S_OK != m_uart.getReturnChar(RC)) {
-        cleanStatus();
-        return;
-      }
+      .. java:field:: boolean enabled
 
-.. java:method:: int readData(int iReadLen, byte[] byRead, int[] iActualLen);
+         Whether the terlmination character function is enabled.
 
-   Receive data from the opened UART device.
+      .. java:field:: byte returnChar
 
-   :param int iReadLen: number of bytes to read, maximum 1024 bytes per transfer.
-   :param byte[] byRead: pointer to the buffer pointer.
-   :param int[] iActualLen: the actual number of bytes received
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`.
+         The termination character
 
-.. java:method:: int writeData(int iWriteLen, byte[] byWrite);
+   .. java:method:: int setReturnChar(boolean bEnable, byte byReturnChar);
 
-   Send the data to the opened Uart device.
+      Set the termination character of the opened UART device.
 
-   :param int iWriteLen: number of bytes to transmit, maximum 1024 bytes per transfer.
-   :param byte[] byWrite: pointer to data buffer.
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`.
+      If ``bEnable`` is ``true``, then read will block until a character equal to``byReturnChar`` is received,
+      or read buffer is full. If ``bEnable`` is ``false`` then read will ignore byReturnChar checking when reading data.
 
-.. java:method:: int reset();
+      :param boolean bEnable: enable or disable the termination character function.
+      :param byte byReturnChar: the termination character
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`.
 
-   Reset the opened or failed to open UART device. If the uart device has been used by other object,
-   ``open()`` will return an ``E_UART_ALREADY_OPENED``. The object could call this reset function to
-   release the UART resource and try to open the device again by calling ``open()``.
+   .. java:method:: int getReturnChar(ReturnChar RC);
 
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`.
+      Get the termination character configuration of the opened Uart device and store them in passed ReturnChar Class.
+
+      :param ReturnChar RC: termination character configuration
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`.
+
+      Example:
+
+      .. code-block:: java
+
+         ReturnChar RC = new ReturnChar();
+         if(SmartETK.S_OK != m_uart.getReturnChar(RC)) {
+           cleanStatus();
+           return;
+         }
+
+   .. java:method:: int readData(int iReadLen, byte[] byRead, int[] iActualLen);
+
+      Receive data from the opened UART device.
+
+      :param int iReadLen: number of bytes to read, maximum 1024 bytes per transfer.
+      :param byte[] byRead: pointer to the buffer pointer.
+      :param int[] iActualLen: the actual number of bytes received
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`.
+
+   .. java:method:: int writeData(int iWriteLen, byte[] byWrite);
+
+      Send the data to the opened UART device.
+
+      :param int iWriteLen: number of bytes to transmit, maximum 1024 bytes per transfer.
+      :param byte[] byWrite: pointer to data buffer.
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`.
+
+   .. java:method:: int reset();
+
+      Reset the opened or failed to open UART device. If the uart device has been used by other object,
+      :java:ref:`Uart.open` will return an :java:ref:`E_UART_ALREADY_OPENED`. The object could call this reset function to
+      release the UART resource and try to open the device again by calling :java:ref:`Uart.open`.
+
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`.
 
 UART Code Examples
 ------------------
 
-UART Initialize Communication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UART Initialization
+^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
-   In the sample code below, ``mETBaudRate`` is an ``EditText`` widget.
+   In the sample code below, ``mETBaudRate`` refers to an ``EditText`` widget.
 
 .. code-block:: java
 
@@ -199,7 +220,7 @@ UART Initialize Communication
      return;
    }
 
-UART Write Data
+Write UART Data
 ^^^^^^^^^^^^^^^
 
 .. note::
@@ -213,7 +234,7 @@ UART Write Data
      return;
    }
 
-UART Read Data
+Read UART Data
 ^^^^^^^^^^^^^^
 
 .. code-block:: java

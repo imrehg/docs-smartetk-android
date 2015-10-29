@@ -3,7 +3,7 @@
 SystemETK Class
 ===============
 
-.. java:package:: com.viaembedded.smartetk.SystemETK
+.. java:package:: com.viaembedded.smartetk
 
 .. java:type:: class SystemETK
 
@@ -13,19 +13,19 @@ SystemETK Class
 
       SystemETK m_system = new SystemETK();
 
-.. java:method:: int reboot()
+   .. java:method:: int reboot()
 
-   Reboot the machine.
+      Reboot the machine.
 
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`
 
-.. java:method:: int suspend()
+   .. java:method:: int suspend()
 
-   Suspend the machine.
+      Suspend the machine.
 
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`
 
 SystemETK Code Examples
 -----------------------

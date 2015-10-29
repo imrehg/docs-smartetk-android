@@ -1,28 +1,39 @@
 .. _smartetk:
 
-SmartETK
-========
+SmartETK class
+==============
 
-.. java:package:: com.viaembedded.smartetk.SmartETK
+This class contains general parts used by the rest of the package, such as function return values, and some
+helper classes.
 
-The contents of the ``com.viaembedded.smartetk.SmartETK`` package.
+.. java:package:: com.viaembedded.smartetk
 
-.. _helper:
+.. java:type:: class SmartETK
 
-Helper Classes
---------------
+   .. _helper:
 
-.. java:type:: class Timeout
+   Helper classes:
 
-   Timeout configuration
+   .. java:type:: class Timeout
 
-   :param boolean bEnable: enable or disable timeout function
-   :param int iTimeout: timeout value in multiples of 0.1 seconds, accepted range is 0 – 255 (0 - 25.5 seconds)
+      Timeout configuration, used by :java:ref:`Can.getTimeout` and :java:ref:`Uart.getTimeout`.
+
+      .. java:field:: boolean Enable
+
+	 Enable or disable timeout function
+
+      .. java:field:: int Timeout
+
+	 timeout value in multiples of 0.1 seconds, accepted range is 0 – 255 (0 - 25.5 seconds)
 
 .. _return:
 
 Function Return Values
 ----------------------
+
+.. java:package:: com.viaembedded.smartetk.SmartETK
+
+The return values and error codes used by the methods in Smart ETK.
 
 .. java:field:: static int S_OK
 
@@ -50,13 +61,13 @@ Function Return Values
 .. java:field:: static int E_CONNECTION_FAIL
 
    When a function returns the E_CONNECTION_FAIL value, it indicates that the
-   bsservice doesn't respond the request. Please make sure bsservice is running
+   ``bsservice`` doesn't respond the request. Please make sure bsservice is running
    successfully.
 
 .. java:field:: static int E_NOT_RESPOND_YET
 
    When a function returns the E_NOT_RESPOND_YET value, it indicates that the
-   bsservice function is still running and has not finished yet.
+   ``bsservice`` function is still running and has not finished yet.
 
 .. java:field:: static int E_TIMEOUT
 
@@ -81,7 +92,7 @@ Function Return Values
    When :java:ref:`Uart.open` returns the E_UART_ALREADY_OPENED value, it indicates
    that the uart object has been opened. If you need to open other uart device,
    please call close function to close the current device, then open the other
-   uart again.
+   UART again.
 
 .. java:field:: static int E_UART_TTY_BEEN_USED
 

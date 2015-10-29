@@ -3,7 +3,7 @@
 RTC Class
 =========
 
-.. java:package:: com.viaembedded.smartetk.RTC
+.. java:package:: com.viaembedded.smartetk
 
 .. java:type:: class RTC
 
@@ -13,70 +13,89 @@ RTC Class
 
       RTC m_rtc = new RTC();
 
-.. java:field:: static byte ARG_RTC_MODE_DAY
+   .. java:field:: static byte ARG_RTC_MODE_DAY
 
-   Waking up every day.
+      Waking up every day.
 
-.. java:field:: static byte ARG_RTC_MODE_WEEK
+   .. java:field:: static byte ARG_RTC_MODE_WEEK
 
-   Waking up every week.
+      Waking up every week.
 
-.. java:field:: static byte ARG_RTC_MODE_MONTH
+   .. java:field:: static byte ARG_RTC_MODE_MONTH
 
-   Waking up every month.
+      Waking up every month.
 
-.. java:method:: int setWakeUpTime(byte Mode, int Year, byte Month, byte Day, byte Hour, byte Min, byte Sec)
+   .. java:type:: class RTCStatus
 
-   Set the wake up time and mode in RTC. The behavior of wake up from
-   suspend mode will start at the wake up time, and it must loop according to
-   the wake up mode.
+      RTC wake up time object
 
-   :param byte Mode: wake up mode, one of :java:ref:`ARG_RTC_MODE_DAY`, :java:ref:`ARG_RTC_MODE_WEEK`, or :java:ref:`ARG_RTC_MODE_MONTH`. 
-   :param int Year: year of wake up time, counted since 1900 for wake up, for example 2015 is `iYear = 115` (???)
-   :param byte Month: month of wake up time, between 1 and 12
-   :param byte Day: day of the month for wake up time, between 1 and 31
-   :param byte Hour: hours for wake up time (24h clock), between 0 and 23
-   :param byte Min: minutes for wake up time, between 0 and 59
-   :param byte Sec: seconds for wake up time, between 0 and 59
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`
+      .. java:field:: byte Mode
 
-.. java:type:: class RTCStatus
+	 wake up mode, one of :java:ref:`ARG_RTC_MODE_DAY`, :java:ref:`ARG_RTC_MODE_WEEK`, or :java:ref:`ARG_RTC_MODE_MONTH`.
+      .. java:field:: int Year
 
-   RTC wake up time object
+	 year of wake up time, counted from 1900, for example 2015 is `iYear = 115`
 
-   :param byte Mode: wake up mode, one of :java:ref:`ARG_RTC_MODE_DAY`, :java:ref:`ARG_RTC_MODE_WEEK`, or :java:ref:`ARG_RTC_MODE_MONTH`. 
-   :param int Year: year of wake up time, counted since 1900 for wake up, for example 2015 is `iYear = 115`
-   :param byte Month: month of wake up time, between 1 and 12 accepted
-   :param byte Day: day of the month for wake up time, between 1 and 31 are
-   :param byte Hour: hours for wake up time (24h clock), between 0 and 23
-   :param byte Min: minutes for wake up time, between 0 and 59
-   :param byte Sec: seconds for wake up time, between 0 and 59
+      .. java:field:: byte Month
 
-.. java:method:: int getWakeUpTime(RTCStatus RS)
+	 month of wake up time, between 1 and 12 accepted
 
-   Get the wake up time and mode set in RTC.
-   
-   :param RTCStatus RS: parameter to return the current wake up time and mode
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`
+      .. java:field:: byte Day
 
-.. java:method:: int setEnable(boolean bEnable)
+	 day of the month for wake up time, between 1 and 31
 
-   Enable or disable RTC wake up function from suspend mode.
+      .. java:field:: byte Hour
 
-   :param boolean bEnable: ``true`` to enable, ``false`` to disable RTC wake up function from suspend mode
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`
-			  
-.. java:method:: int getEnable(boolean[] bEnable)
+	 hours for wake up time (24h clock), between 0 and 23
 
-   Get the status if wake up function from suspend mode is enabled or disabled.
-   
-   :param boolean[] bEnable: parameter to return ``true`` for enabled, ``false`` for disabled
-   :return: :java:ref:`S_OK` if function succeeds
-   :return: ``E_*`` otherwise, see :ref:`return`
-			     
+      .. java:field:: byte Min
+
+	 minutes for wake up time, between 0 and 59
+
+      .. java:field:: byte Sec
+
+	 seconds for wake up time, between 0 and 59
+
+   .. java:method:: int setWakeUpTime(byte Mode, int Year, byte Month, byte Day, byte Hour, byte Min, byte Sec)
+
+      Set the wake up time and mode in RTC. The behavior of wake up from
+      suspend mode will start at the wake up time, and it must loop according to
+      the wake up mode.
+
+     :param byte Mode: wake up mode, one of :java:ref:`ARG_RTC_MODE_DAY`, :java:ref:`ARG_RTC_MODE_WEEK`, or :java:ref:`ARG_RTC_MODE_MONTH`.
+     :param int Year: year of wake up time, counted since 1900 for wake up, for example 2015 is `iYear = 115` (???)
+     :param byte Month: month of wake up time, between 1 and 12
+     :param byte Day: day of the month for wake up time, between 1 and 31
+     :param byte Hour: hours for wake up time (24h clock), between 0 and 23
+     :param byte Min: minutes for wake up time, between 0 and 59
+     :param byte Sec: seconds for wake up time, between 0 and 59
+     :return: :java:ref:`S_OK` if function succeeds
+     :return: ``E_*`` otherwise, see :ref:`return`
+
+   .. java:method:: int getWakeUpTime(RTCStatus RS)
+
+      Get the wake up time and mode set in RTC.
+
+      :param RTCStatus RS: parameter to return the current wake up time and mode
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`
+
+   .. java:method:: int setEnable(boolean bEnable)
+
+      Enable or disable RTC wake up function from suspend mode.
+
+      :param boolean bEnable: ``true`` to enable, ``false`` to disable RTC wake up function from suspend mode
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`
+
+   .. java:method:: int getEnable(boolean[] bEnable)
+
+      Get the status if wake up function from suspend mode is enabled or disabled.
+
+      :param boolean[] bEnable: parameter to return ``true`` for enabled, ``false`` for disabled
+      :return: :java:ref:`S_OK` if function succeeds
+      :return: ``E_*`` otherwise, see :ref:`return`
+
 RTC Code Examples
 -----------------
 
@@ -84,7 +103,7 @@ Set RTC Wake Up From Suspend mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: java
-		
+
    boolean bSetEnable = true;
 
    if(null == m_rtc) {
@@ -106,14 +125,14 @@ Get RTC Wake Up Status
    if(SmartETK.S_OK != m_rtc.getEnable(bGetEnable)) {
      return false;
    }
-   
+
 Set RTC Wake Up Time
 ^^^^^^^^^^^^^^^^^^^^
 
 The folloing code sets the wake up behaviour to wake up from suspend starting from 2015/5/1, every day at 12:00.
 
 .. code-block:: java
-		
+
    byte Mode = RTC.ARG_RTC_MODE_DAY;
    int Year = 2015;
    byte Month = IntToByte(5);
@@ -128,7 +147,7 @@ The folloing code sets the wake up behaviour to wake up from suspend starting fr
 
    if(SmartETK.S_OK != m_rtc.setWakeUpTime(Mode, Year, Month, Day, Hour, Min, Sec)) {
      return false;
-   } 
+   }
 
 Get RTC Wake Up Time
 ^^^^^^^^^^^^^^^^^^^^
@@ -140,5 +159,5 @@ Get RTC Wake Up Time
    }
    m_RS = new RTCStatus();
    if(SmartETK.S_OK != m_rtc.getWakeUpTime(m_RS)) {
-     return false; 
+     return false;
    }
